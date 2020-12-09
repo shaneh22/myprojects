@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <title>ChoosingRooms</title>
+    <style>
+        .square {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(163, 163, 163);
+            margin: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+</head>
+
+<body>
+    <div class="container" id="root">
+        <div class="content">
+            <div class="columns is-multiline justify-center">
+                <div class="square column">
+                    <h1 class="has-text-centered">The Lookout</h1>
+                    <h2 id="enterLookout" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterLookout" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="square column">
+                    <h1 class="has-text-centered">The Observatory</h1>
+                    <h2 id="enterObservatory" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterObservatory" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="square column">
+                    <h1 class="has-text-centered">Room 3</h1>
+                    <h2 id="enterRoom3" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterRoom3" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-multiline justify-center">
+                <div class="square column">
+                    <h1 class="has-text-centered">Room 4</h1>
+                    <h2 id="enterRoom4" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterRoom4" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="square column">
+                    <h1 class="has-text-centered">Room 5</h1>
+                    <h2 id="enterRoom5" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterRoom5" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="square column">
+                    <h1 class="has-text-centered">Room 6</h1>
+                    <h2 id="enterRoom6" class="has-text-centered">0</h2>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button data-button-id="enterRoom6" class="button is-inline-block"
+                                type="submit">Enter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
