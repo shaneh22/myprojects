@@ -1,0 +1,38 @@
+.cellview {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.cellview.active {
+    background: lightpink;
+}
+.cellview.inactive {
+    background: lightskyblue;
+}
+
+.button {
+    width: 100px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-shadow: 2px 2px lightpink;
+  }
+  
+h2 {
+    color: grey;
+}
+
+#lost {
+    color: darkred;
+    text-shadow: 2px 2px black;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium';
+}
+#won {
+    color: green;
+    text-shadow: 2px 2px yellowgreen;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium';
+}
