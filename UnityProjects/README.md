@@ -1,2 +1,2 @@
 # unityprojects
-My game jam or side fun projects in unity
+My game development competition ("game jam") projects or fun side projects in Unity
