@@ -1,1 +1,4 @@
 To use, run 'npm install', then 'npm run dev', and finally open localhost:3000 in your browser. 
+
+Much of this code comes from following a tutorial here : https://www.youtube.com/watch?v=jD7FnbI76Hg&t=3111s 
+However, I did add on to it and adapt it a bit.
