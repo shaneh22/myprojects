@@ -59,10 +59,19 @@ public class BoardManager : MonoBehaviour
         BoardSetup();
         InitializeList();
         _ = Instantiate(exit, new Vector2(columns - 1, rows - 1), Quaternion.identity);
-        numEnemies = 5 + (int)(level / 2);
+        numEnemies = Random.Range((level / 2) + 5, level + 3);
         for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(ghost, RandomPosition(), Quaternion.identity);
+            Vector2 randomPosition = RandomPosition();
+            if(randomPosition.x < 5)
+            {
+                randomPosition.x += 5;
+            }
+            else if (randomPosition.y < 5)
+            {
+                randomPosition.y += 5;
+            }
+            _ = Instantiate(ghost, randomPosition, Quaternion.identity);
         }
     }
 }

@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
 
+    public AudioClip hurtSound;
+
     public void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -19,26 +21,31 @@ public class Enemy : MonoBehaviour
         Vector2 targetPosition = gameObject.transform.position;
         if (enemyPosition.x - targetPosition.x > 0)
         {
-            targetPosition.x += speed * Time.deltaTime;
+            //targetPosition.x += speed * Time.deltaTime;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
         else if (enemyPosition.x - targetPosition.x < 0)
         {
-            targetPosition.x -= speed * Time.deltaTime;
+            //targetPosition.x -= speed * Time.deltaTime;
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
 
         if (enemyPosition.y - targetPosition.y > 0)
         {
-            targetPosition.y += speed * Time.deltaTime;
+            //targetPosition.y += speed * Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, speed);
         }
         else if (enemyPosition.y - targetPosition.y < 0)
         {
-            targetPosition.y -= speed * Time.deltaTime;
+            //targetPosition.y -= speed * Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, -speed);
         }
-        rb.MovePosition(targetPosition);
+        //rb.MovePosition(targetPosition);
     }
     public void HitEnemy(float hit)
     {
         health -= hit;
+        SoundManager.instance.PlaySingle(hurtSound);
         if (health <= 0)
         {
             Destroy(gameObject);

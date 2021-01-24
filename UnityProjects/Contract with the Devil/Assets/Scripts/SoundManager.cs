@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     public AudioSource musicSource;
+    public AudioSource efxSource;
 
     void Awake()
     {
@@ -18,5 +19,10 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void PlaySingle(AudioClip clip)
+    {
+        efxSource.PlayOneShot(clip);
     }
 }

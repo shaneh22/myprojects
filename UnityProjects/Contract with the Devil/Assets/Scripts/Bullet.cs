@@ -56,13 +56,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemy")
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            collision.GetComponent<Enemy>().HitEnemy(damage);
+            collision.gameObject.GetComponent<Enemy>().HitEnemy(damage);
         }
     }
     public IEnumerator Destroy()

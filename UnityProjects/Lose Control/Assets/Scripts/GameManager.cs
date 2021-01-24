@@ -260,7 +260,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 10:
                 pc.up = KeyCode.Space;
-                upText.text = "⎵";
+                upText.text = "Sp";
 
                 pc.left = KeyCode.A;
                 leftText.text = "A";

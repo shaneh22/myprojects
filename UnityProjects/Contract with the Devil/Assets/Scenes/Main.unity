@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -87,7 +94,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -166,17 +175,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 96750146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 28
@@ -198,6 +206,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330073, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
       propertyPath: m_Name
@@ -207,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
@@ -225,6 +258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -237,16 +275,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330076, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
@@ -263,46 +291,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: bullet0
-      value: 
-      objectReference: {fileID: 2467838260559968397, guid: 0846fc0479562478cab7484d51d164a6,
-        type: 3}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: blockingLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: bc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: cc
-      value: 
-      objectReference: {fileID: 317343517}
-    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 2063873287}
-    - target: {fileID: 3917009332224330077, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1758620311
-      objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330077, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917009332224330077, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1758620311
       objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330079, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
@@ -316,33 +313,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917009332224330079, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
-      propertyPath: m_Offset.y
-      value: 0.065164804
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330079, guid: 334b683d893254f6380505833ef77a21,
-        type: 3}
       propertyPath: m_Offset.x
       value: 0.023893699
       objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+    - target: {fileID: 3917009332224330079, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: m_Offset.y
+      value: 0.065164804
       objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
+      propertyPath: bc
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917009332224330072, guid: 334b683d893254f6380505833ef77a21,
+      propertyPath: cc
+      value: 
+      objectReference: {fileID: 317343517}
+    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
         type: 3}
-      propertyPath: m_BodyType
-      value: 0
+      propertyPath: bullet0
+      value: 
+      objectReference: {fileID: 2467838260559968397, guid: 0846fc0479562478cab7484d51d164a6,
+        type: 3}
+    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 2063873287}
+    - target: {fileID: 5328457514467176628, guid: 334b683d893254f6380505833ef77a21,
+        type: 3}
+      propertyPath: blockingLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3917009332224330079, guid: 334b683d893254f6380505833ef77a21, type: 3}
@@ -393,17 +396,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 143509531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -475,7 +477,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 290588276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -489,17 +491,20 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7075472, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 0.09803922, b: 0.09803922, a: 1}
     m_PressedColor: {r: 0.3584906, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.09803922, b: 0.09803922, a: 1}
     m_DisabledColor: {r: 0.6901961, g: 0.05490196, b: 0.12941177, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 290588279}
@@ -507,7 +512,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 290588281}
-        m_MethodName: pay3
+        m_MethodName: Pay3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -517,8 +522,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &290588279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,17 +531,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 290588276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -548,6 +550,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &290588280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -568,6 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dbbcfb3d07742ec9d38f1d2310b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 7f8beabc143554ed18ec0b333f6e22f9, type: 3}
 --- !u!1 &317343516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3917009332224330073, guid: 334b683d893254f6380505833ef77a21,
@@ -636,17 +640,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 320808074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 89e3e485c91ff4918848bc4d72758d49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -656,6 +659,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &320808077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -710,17 +714,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 391478186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -794,11 +797,12 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -882,17 +886,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 554499091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -902,6 +905,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &554499093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -958,7 +962,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 630890886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -977,7 +981,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 630890886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -1088,7 +1092,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1282933075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1102,17 +1106,20 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7075472, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 0.0990566, b: 0.0990566, a: 1}
     m_PressedColor: {r: 0.3584906, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.0990566, b: 0.0990566, a: 1}
     m_DisabledColor: {r: 0.6886792, g: 0.055224285, b: 0.12838952, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1282933078}
@@ -1120,7 +1127,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1282933080}
-        m_MethodName: pay5
+        m_MethodName: Pay5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1130,8 +1137,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1282933078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,17 +1146,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1282933075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1161,6 +1165,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1282933079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1181,6 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dbbcfb3d07742ec9d38f1d2310b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 7f8beabc143554ed18ec0b333f6e22f9, type: 3}
 --- !u!1 &1283714144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283714144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -1247,7 +1253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283714144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -1327,17 +1333,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384601661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -1394,7 +1399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24723843, y: 0.11639375}
   m_AnchorMax: {x: 0.8502062, y: 0.15456204}
-  m_AnchoredPosition: {x: 15.100037, y: -17}
+  m_AnchoredPosition: {x: 15.100037, y: -21}
   m_SizeDelta: {x: 27.900024, y: 32.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402848979
@@ -1406,17 +1411,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1402848977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -1473,7 +1477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24723843, y: 0.34948656}
   m_AnchorMax: {x: 0.8677616, y: 0.44132438}
-  m_AnchoredPosition: {x: 8.100037, y: -94}
+  m_AnchoredPosition: {x: 8.100037, y: -88}
   m_SizeDelta: {x: 13.900024, y: 2.2999954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1418297885
@@ -1485,17 +1489,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1418297883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -1508,7 +1511,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: You get a gun with the power to kill ghosts.
 --- !u!222 &1418297886
 CanvasRenderer:
@@ -1573,7 +1576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602379713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1587,17 +1590,20 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7075472, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 0.09803922, b: 0.09803922, a: 1}
     m_PressedColor: {r: 0.3584906, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.09803922, b: 0.09803922, a: 1}
     m_DisabledColor: {r: 0.6901961, g: 0.05490196, b: 0.12941177, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1602379716}
@@ -1605,7 +1611,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1602379718}
-        m_MethodName: pay1
+        m_MethodName: Pay1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1615,8 +1621,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1602379716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,17 +1630,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602379713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1646,6 +1649,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1602379717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1666,6 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dbbcfb3d07742ec9d38f1d2310b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 7f8beabc143554ed18ec0b333f6e22f9, type: 3}
 --- !u!1 &1816647614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24723843, y: 0.34948656}
   m_AnchorMax: {x: 0.8677616, y: 0.44132438}
-  m_AnchoredPosition: {x: 8.100006, y: -29}
+  m_AnchoredPosition: {x: 8.100006, y: -23}
   m_SizeDelta: {x: 13.9, y: 2.2999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816647616
@@ -1712,17 +1717,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816647614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
     m_FontSize: 14
@@ -1735,7 +1739,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: 'Your shots are much faster, have unlimited range, and kill ghosts. '
 --- !u!222 &1816647617
 CanvasRenderer:
@@ -1791,20 +1795,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2063873285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d253aa78f4e734897998d678292e3607, type: 3}
-    m_FontSize: 32
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -1831,10 +1834,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4034709747956841041, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
+        type: 3}
+      propertyPath: efxSource
+      value: 
+      objectReference: {fileID: 8125897846823020866}
     - target: {fileID: 8125897845883026811, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
         type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
         type: 3}
@@ -1853,6 +1866,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1865,16 +1883,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8125897845883026812, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
         type: 3}
@@ -1891,5 +1899,112 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8195532384352114295, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e9347de15eb8408bac8b0ffc8376ecd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f, type: 3}
+--- !u!1 &8125897846823020865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8125897845883026811, guid: 5bba73fc7b0cd4d11b7f80cc47f4715f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8125897846823020864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8125897846823020866
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125897846823020865}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

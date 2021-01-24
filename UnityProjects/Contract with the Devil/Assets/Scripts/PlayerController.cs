@@ -14,18 +14,32 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float lastHAxis;
     [HideInInspector] public float lastVAxis;
 
+    public AudioClip shootSound;
+    public AudioClip hurtSound;
     // Start is called before the first frame update
     private void Awake()
     {
-        if (GameManager.instance != null)
-        {
-            health = GameManager.instance.playerHealth;
-        }
-        healthText.text = "Health: " + health;
         rb = GetComponent <Rigidbody2D>();
         StartCoroutine(Fire());
     }
+    private void Start()
+    {
+        _ = StartCoroutine(nameof(SetHealth));
+    }
 
+    private IEnumerator SetHealth()
+    {
+        while (true)
+        {
+            if (GameManager.instance != null && !GameManager.instance.devil)
+            {
+                health = GameManager.instance.playerHealth;
+                healthText.text = "Health: " + health;
+                break;
+            }
+            yield return null;
+        }
+    }
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -49,7 +63,10 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.level++;
             SceneManager.LoadScene(1);
         }
-        else if (collision.tag == "Enemy")
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             LoseHealth();
         }
@@ -63,6 +80,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject temp = Instantiate(bullet0, rb.position + GetBulletPos(), Quaternion.identity);
                 temp.GetComponent<Bullet>().SetPosition(lastHAxis, lastVAxis);
+                SoundManager.instance.PlaySingle(hurtSound);
             }
             yield return null;
         }
@@ -71,6 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         health--;
         healthText.text = "Health: " + health;
+        SoundManager.instance.PlaySingle(hurtSound);
         if (health <= 0)
         {
             GameManager.instance.GameOver();

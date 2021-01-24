@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,11 +96,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1992af344ff447a5afdc9d27c4d3841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 6
+  healthText: {fileID: 0}
   bullet0: {fileID: 2467838260559968397, guid: 0846fc0479562478cab7484d51d164a6, type: 3}
   rb: {fileID: 3917009332224330072}
+  health: 0
   lastHAxis: 0
   lastVAxis: 0
+  shootSound: {fileID: 8300000, guid: c57de4ac9d7a44efdb72c489ef87390d, type: 3}
+  hurtSound: {fileID: 8300000, guid: d2f12eb91021a41b6879c2e652946701, type: 3}
 --- !u!61 &3917009332224330079
 BoxCollider2D:
   m_ObjectHideFlags: 0

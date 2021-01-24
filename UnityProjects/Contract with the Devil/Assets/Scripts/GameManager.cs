@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool doingSetup = true;
     public int playerHealth = 5;
     public float range = .75f;
-    public float speed = 8;
+    public float speed = 15;
     public bool canShoot = true;
 
     public int level = 1;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         levelImage = GameObject.Find("LevelImage");
         boardScript = GetComponent<BoardManager>();
-        SceneManager.LoadScene(1);
+        StartLevel();
     }
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static public void CallbackInitialization()
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
             instance.StartLevel();
         }
     }
-    private void StartLevel()
+    public void StartLevel()
     {
         doingSetup = true;
         devilScene = GameObject.Find("Devil");
@@ -58,33 +58,42 @@ public class GameManager : MonoBehaviour
             levelText.text = "Floor " + level;
             devilScene.SetActive(false);
 
-            Invoke("HideLevelImage", 1f);
+            Invoke(nameof(HideLevelImage), 1f);
         }
     }
     public void GameOver()
     {
         doingSetup = true;
+        Time.timeScale = 0;
         levelImage.SetActive(true);
         levelText.text = "Game Over";
         SoundManager.instance.musicSource.Stop();
-        Invoke("Restart", 2f);
+        _ = StartCoroutine(nameof(Restart));
     }
-    public void Restart()
+    public IEnumerator Restart()
     {
-        devil = true;
-        level = 1;
-        canShoot = true;
-        range = .75f;
-        speed = 8;
-        playerHealth = 5;
-        SoundManager.instance.musicSource.Play();
-        SceneManager.LoadScene(1);
+        while (true)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                devil = true;
+                level = 1;
+                canShoot = true;
+                range = .75f;
+                speed = 12;
+                playerHealth = 5;
+                SoundManager.instance.musicSource.Play();
+                Time.timeScale = 1;
+                SceneManager.LoadScene(1);
+                break;
+            }
+            yield return null;
+        }
     }
     private void HideLevelImage()
     {
         boardScript.SetupScene(level);
         levelImage.SetActive(false);
         doingSetup = false;
-
     }
 }

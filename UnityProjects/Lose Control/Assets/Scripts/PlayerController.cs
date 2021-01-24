@@ -32,6 +32,14 @@ public class PlayerController : MonoBehaviour
     public KeyCode left;
     public KeyCode right;
 
+    public bool playerVictory = false;
+
+    public AudioClip jumpSound;
+    public AudioClip victorySound;
+    public AudioClip fallSound;
+
+    public ParticleSystem dust;
+
     void Start()
 	{
         rb = GetComponent<Rigidbody2D>();
@@ -70,6 +78,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(up) && jumps > 0 && !cantJump)
         {
+            SoundManager.instance.PlaySingle(jumpSound);
+            CreateDust();
             rb.velocity = Vector2.up * jumpForce;
             if (jumps == 2)
             {
@@ -88,23 +98,27 @@ public class PlayerController : MonoBehaviour
             cc2.enabled = false;
             anim.SetBool("PlayerFalls", true);
             Invoke("EnableBoxCollider", .38f);
+            SoundManager.instance.PlaySingle(fallSound);
             cantJump = true; //the player can't jump while falling through the ground;
         }
 
-        if(transform.position.y < -7 || Input.GetKeyDown(KeyCode.R))
+        if (transform.position.y < -6 || Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("VictoryFlag"))
+        if (collision.gameObject.CompareTag("VictoryFlag") && !playerVictory)
         {
+            SoundManager.instance.PlaySingle(victorySound);
             GameManager.instance.level++;
+            playerVictory = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    void EnableBoxCollider()
+
+    private void EnableBoxCollider()
     {
         cc1.enabled = true;
         cc2.enabled = true;
@@ -116,5 +130,13 @@ public class PlayerController : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+        if (isGrounded)
+        {
+            CreateDust();
+        }
+    }
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
