@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,14 @@ public class GameManager : MonoBehaviour
     public TMP_Text downText;
     public TMP_Text rightText;
     public TMP_Text victoryText;
+    public TMP_Text speedrunText;
+    public TMP_Text deathText;
+
+    private DateTime startingTime;
+    private DateTime endingTime;
+    private string speedrunTime;
+
+    public int deathCount;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,7 +36,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject); 
+        DontDestroyOnLoad(gameObject);
+        startingTime = DateTime.Now;
     }
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
@@ -55,6 +65,10 @@ public class GameManager : MonoBehaviour
         rightText = GameObject.Find("RightText").GetComponent<TMP_Text>();
         victoryText = GameObject.Find("VictoryText").GetComponent<TMP_Text>();
         victoryText.gameObject.SetActive(false);
+        speedrunText = GameObject.Find("SpeedrunText").GetComponent<TMP_Text>();
+        speedrunText.gameObject.SetActive(false);
+        deathText = GameObject.Find("DeathText").GetComponent<TMP_Text>();
+        deathText.gameObject.SetActive(false);
         _ = StartCoroutine(ChangeControls());
     }
     private IEnumerator ChangeControls()
@@ -273,8 +287,30 @@ public class GameManager : MonoBehaviour
                 break;
             case 11:
                 victoryText.gameObject.SetActive(true);
+                speedrunText.gameObject.SetActive(true);
+                deathText.gameObject.SetActive(true);
+                endingTime = DateTime.Now;
+                int speedrunHour = endingTime.Hour < startingTime.Hour ? 24 + endingTime.Hour - startingTime.Hour : endingTime.Hour - startingTime.Hour;
+                int speedrunMinute = endingTime.Minute < startingTime.Minute ? 60 + endingTime.Minute - startingTime.Minute : endingTime.Minute - startingTime.Minute;
+                int speedrunSecond = endingTime.Second < startingTime.Second ? 60 + endingTime.Second - startingTime.Second : endingTime.Second - startingTime.Second;
+                speedrunTime = LeadingZero(speedrunHour) + ":" + LeadingZero(speedrunMinute) + ":" + LeadingZero(speedrunSecond);
+                speedrunText.text = "Time: " + speedrunTime;
+                deathText.text = "Deaths: " + deathCount;
                 break;
         }
+    }
+
+    private string LeadingZero(int n)
+    {
+        return n.ToString().PadLeft(2, '0');
+    }
+
+    public void PlayerRestart()
+    {
+        startingTime = DateTime.Now;
+        deathCount = 0;
+        level = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

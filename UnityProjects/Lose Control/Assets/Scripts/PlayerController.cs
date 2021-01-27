@@ -97,14 +97,22 @@ public class PlayerController : MonoBehaviour
             cc1.enabled = false;
             cc2.enabled = false;
             anim.SetBool("PlayerFalls", true);
-            Invoke("EnableBoxCollider", .38f);
+            Invoke(nameof(EnableBoxCollider), .38f);
             SoundManager.instance.PlaySingle(fallSound);
             cantJump = true; //the player can't jump while falling through the ground;
         }
 
         if (transform.position.y < -6 || Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if(GameManager.instance.level == 11)
+            {
+                GameManager.instance.PlayerRestart();
+            }
+            else
+            {
+                GameManager.instance.deathCount++;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
