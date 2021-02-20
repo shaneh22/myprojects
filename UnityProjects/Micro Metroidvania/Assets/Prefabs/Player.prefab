@@ -14564,7 +14564,7 @@ MonoBehaviour:
   speed: 12
   jumpForce: 8
   groundCheck: {fileID: 9108717918948118701}
-  checkRadius: 0.25
+  checkRadius: 0.35
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -14609,6 +14609,7 @@ MonoBehaviour:
   coinParticles: {fileID: 7097332073353740967, guid: c27ef150556fc425cb6c01198c715d30,
     type: 3}
   vCam: {fileID: 0}
+  winScreen: {fileID: 0}
 --- !u!50 &9108717918895720954
 Rigidbody2D:
   serializedVersion: 4

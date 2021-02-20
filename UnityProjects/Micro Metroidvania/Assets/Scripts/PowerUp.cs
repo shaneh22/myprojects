@@ -6,7 +6,6 @@ public class PowerUp : MonoBehaviour
 {
     public int powerUpID;
     public GameObject screen;
-    public BoxCollider2D bc;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -50,6 +49,18 @@ public class PowerUp : MonoBehaviour
                             Destroy(gameObject);
                         }
                         break;
+                    case 5:
+                        if (Player.instance.extraLife1Collected)
+                        {
+                            Destroy(gameObject);
+                        }
+                        break;
+                    case 6:
+                        if (Player.instance.extraLife2Collected)
+                        {
+                            Destroy(gameObject);
+                        }
+                        break;
                 }
                 break;
             }
@@ -73,9 +84,22 @@ public class PowerUp : MonoBehaviour
             case 4:
                 Player.instance.wallJumpEnabled = true;
                 break;
+            case 5:
+                Player.instance.extraLife1Collected = true;
+                break;
+            case 6:
+                Player.instance.extraLife2Collected = true;
+                break;
         }
-        screen.SetActive(true);
-        Invoke(nameof(CloseScreen), 1.9f);
+        if(powerUpID != 5 && powerUpID != 6)
+        {
+            screen.SetActive(true);
+            Invoke(nameof(CloseScreen), 1.9f);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void CloseScreen()

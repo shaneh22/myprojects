@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text deathText;
 
     private DateTime startingTime;
-    private DateTime endingTime;
+    private TimeSpan timeInterval;
     private string speedrunTime;
 
     public int deathCount;
@@ -289,11 +289,8 @@ public class GameManager : MonoBehaviour
                 victoryText.gameObject.SetActive(true);
                 speedrunText.gameObject.SetActive(true);
                 deathText.gameObject.SetActive(true);
-                endingTime = DateTime.Now;
-                int speedrunHour = endingTime.Hour < startingTime.Hour ? 24 + endingTime.Hour - startingTime.Hour : endingTime.Hour - startingTime.Hour;
-                int speedrunMinute = endingTime.Minute < startingTime.Minute ? 60 + endingTime.Minute - startingTime.Minute : endingTime.Minute - startingTime.Minute;
-                int speedrunSecond = endingTime.Second < startingTime.Second ? 60 + endingTime.Second - startingTime.Second : endingTime.Second - startingTime.Second;
-                speedrunTime = LeadingZero(speedrunHour) + ":" + LeadingZero(speedrunMinute) + ":" + LeadingZero(speedrunSecond);
+                timeInterval = DateTime.Now - startingTime;
+                speedrunTime = LeadingZero(timeInterval.Hours) + ":" + LeadingZero(timeInterval.Minutes) + ":" + LeadingZero(timeInterval.Seconds);
                 speedrunText.text = "Time: " + speedrunTime;
                 deathText.text = "Deaths: " + deathCount;
                 break;

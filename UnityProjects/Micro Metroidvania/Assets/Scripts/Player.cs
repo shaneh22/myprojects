@@ -48,6 +48,8 @@ public class Player : MonoBehaviour
     public bool doubleJumpEnabled;
     public bool wallJumpEnabled;
     public bool vengeanceEnabled;
+    public bool extraLife1Collected;
+    public bool extraLife2Collected;
 
     PlayerControls controls;
 
@@ -103,7 +105,7 @@ public class Player : MonoBehaviour
 
     private int numDeaths;
     private DateTime startingTime;
-    private DateTime endingTime;
+    private TimeSpan timeInterval;
     private string speedrunTime;
     public GameObject winScreen;
 
@@ -414,7 +416,7 @@ public class Player : MonoBehaviour
             lives = maxLives;
             SetHealthText();
             PowerUp();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PowerUp>().Collison();
         }
         else if (collision.gameObject.CompareTag("Coin"))
         {
@@ -585,10 +587,10 @@ public class Player : MonoBehaviour
         controls.Disable();
         GameObject.Find("Deaths").GetComponent<TMP_Text>().text = "Deaths: " + numDeaths;
         TMP_Text speedrunText = GameObject.Find("Time").GetComponent<TMP_Text>();
-        endingTime = DateTime.Now;
-        int speedrunHour = endingTime.Hour < startingTime.Hour ? 24 + endingTime.Hour - startingTime.Hour : endingTime.Hour - startingTime.Hour;
-        int speedrunMinute = endingTime.Minute < startingTime.Minute ? 60 + endingTime.Minute - startingTime.Minute : endingTime.Minute - startingTime.Minute;
-        int speedrunSecond = endingTime.Second < startingTime.Second ? 60 + endingTime.Second - startingTime.Second : endingTime.Second - startingTime.Second;
+        timeInterval = DateTime.Now - startingTime;
+        int speedrunHour = timeInterval.Hours;
+        int speedrunMinute = timeInterval.Minutes;
+        int speedrunSecond = timeInterval.Seconds;
         speedrunTime = LeadingZero(speedrunHour) + ":" + LeadingZero(speedrunMinute) + ":" + LeadingZero(speedrunSecond);
         speedrunText.text = "Time: " + speedrunTime;
         GameObject.Find("Grade").GetComponent<TMP_Text>().text = "Grade: " + Grade();
@@ -601,7 +603,7 @@ public class Player : MonoBehaviour
 
     private string Grade()
     {
-        if (maxLives == 5 && numCoins >= 300)
+        if (maxLives == 5 && numCoins >= 250)
         {
             return "S";
         }
