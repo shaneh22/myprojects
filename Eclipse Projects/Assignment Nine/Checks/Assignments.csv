@@ -1,0 +1,226 @@
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,expectedTypes,[main.Assignment(.*), @ScannerBean, @Number, @Word, @Quote, @Start, @End, @Plus, @Minus, @move, @say, @rotateLeftArm, @rotateRightArm, @repeat, @define, @call, @thread, @wait, @proceedAll, @sleep, @undo, @redo, @approach, @pass, @fail, @RotatingLine, @Angle, @Avatar, @BridgeScene, @Locatable, @BoundedShape, @Table, @CommandInterpreter, @ConsoleSceneView, @InheritingBridgeScenePainter, @ObservableBridgeScenePainter, @PaintListener, @BridgeSceneController, @CommandInterpreterController, @ObservableCommandInterpreter, @SayCommand, @MoveCommand, @PassCommand, @Animator, @AnimatingCommand, @FailCommand, @ApproachCommand, @RepeatCommand, @CommandList, @RotateLeftArm, @RotateRightArm, @Sleep, @Define, @Call, @Thread, @DefineCommand, @CallCommand, @ThreadCommand, @Parser, @ScanningException, @ParsingException, @BroadcastingClearanceManager, @SingletonsCreator, @CustomSwingTextFieldFactory, @UndoCommand, @RedoCommand]
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,typeDefined,ScannerBean,@ScannerBean,Class
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,expectedGetters,ScannerBean,Tokens,.*\[\]
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,expectedGetters,ScannerBean,TokenList,@LIST_PATTERN
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,expectedGetters,ScannerBean,TokenList,@ClearableHistory
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/ScannerBean.java,classHasAtLeastOneInterface,ScannerBean,main.ScannerBean
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/Assignment2.java,typeDefined,Assignment2,main.Assignment(.*),Class
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/Assignment2.java,variableHasClassType,Assignment2,ScannerBean,bean
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/Assignment2.java,missingMethodCall,Assignment2,ObjectEditor.initialize:->void
+0,Wed Sep 05 15:21:42 EDT 2018,true,main/RunTests.java,typeDefined,RunTests,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Start.java,expectedTypes,[main.Assignment(.*), @ScannerBean, @Number, @Word, @Quote, @Start, @End, @Plus, @Minus, @move, @say, @rotateLeftArm, @rotateRightArm, @repeat, @define, @call, @thread, @wait, @proceedAll, @sleep, @undo, @redo, @approach, @pass, @fail, @RotatingLine, @Angle, @Avatar, @BridgeScene, @Locatable, @BoundedShape, @Table, @CommandInterpreter, @ConsoleSceneView, @InheritingBridgeScenePainter, @ObservableBridgeScenePainter, @PaintListener, @BridgeSceneController, @CommandInterpreterController, @ObservableCommandInterpreter, @SayCommand, @MoveCommand, @PassCommand, @Animator, @AnimatingCommand, @FailCommand, @ApproachCommand, @RepeatCommand, @CommandList, @RotateLeftArm, @RotateRightArm, @Sleep, @Define, @Call, @Thread, @DefineCommand, @CallCommand, @ThreadCommand, @Parser, @ScanningException, @ParsingException, @BroadcastingClearanceManager, @SingletonsCreator, @CustomSwingTextFieldFactory, @UndoCommand, @RedoCommand]
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Start.java,typeDefined,Start,@Start,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Line.java,typeDefined,Line,@RotatingLine,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@RotateLeftArm,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@RotateRightArm,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@Sleep,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@Define,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@Call,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Command.java,typeDefined,Command,@Thread,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/NumberToken.java,typeDefined,NumberToken,@Number,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateLeftArm.java,typeDefined,RotateLeftArm,@RotateLeftArm,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateLeftArm.java,classHasOneInterface,RotateLeftArm,main.RotateLeftArm
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateLeftArm.java,functionAssignsGlobal,RotateLeftArm,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Repeat.java,typeDefined,Repeat,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Repeat.java,classHasOneInterface,Repeat,main.Repeat
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Repeat.java,functionAssignsGlobal,Repeat,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Scanner.java,typeDefined,Scanner,@ScannerBean,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Move.java,typeDefined,Move,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Move.java,classHasOneInterface,Move,main.Move
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Move.java,functionAssignsGlobal,Move,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Plus.java,typeDefined,Plus,@Plus,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Quote.java,typeDefined,Quote,@Quote,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Number.java,typeDefined,Number,@Number,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Number.java,classHasOneInterface,Number,main.Number
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Number.java,functionAssignsGlobal,Number,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Word.java,typeDefined,Word,@Word,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Word.java,classHasOneInterface,Word,main.Word
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Word.java,functionAssignsGlobal,Word,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Define.java,typeDefined,Define,@Define,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Define.java,classHasOneInterface,Define,main.Define
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Define.java,functionAssignsGlobal,Define,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Thread.java,typeDefined,Thread,@Thread,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Thread.java,duplicateShortTypeName,Thread,[main.Thread, java.lang.Thread]
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Thread.java,classHasOneInterface,Thread,main.Thread
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Thread.java,functionAssignsGlobal,Thread,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Number,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Word,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Quote,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Start,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@End,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Plus,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Minus,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@RotateLeftArm,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@RotateRightArm,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Sleep,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Define,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Call,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Token.java,typeDefined,Token,@Thread,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateRightArm.java,typeDefined,RotateRightArm,@RotateRightArm,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateRightArm.java,classHasOneInterface,RotateRightArm,main.RotateRightArm
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotateRightArm.java,functionAssignsGlobal,RotateRightArm,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotatingLine.java,typeDefined,RotatingLine,@RotatingLine,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotatingLine.java,magic.number,RotatingLine,16,16
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotatingLine.java,expectedSuperTypes,RotatingLine,@BoundedShape,RotatingLine
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotatingLine.java,functionAssignsGlobal,RotatingLine,getHeight
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/RotatingLine.java,functionAssignsGlobal,RotatingLine,getWidth
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/APolarPoint.java,typeDefined,APolarPoint,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/APolarPoint.java,variableHasClassType,RotatingLine,APolarPoint,endPoint
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/End.java,typeDefined,End,@End,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Call.java,typeDefined,Call,@Call,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Call.java,classHasOneInterface,Call,main.Call
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Call.java,functionAssignsGlobal,Call,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Wait.java,typeDefined,Wait,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Wait.java,classHasOneInterface,Wait,main.Wait
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Wait.java,functionAssignsGlobal,Wait,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Say.java,typeDefined,Say,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Say.java,classHasOneInterface,Say,main.Say
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Say.java,functionAssignsGlobal,Say,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,typeDefined,Assignment4,main.Assignment(.*),Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,illegalMethodCall,Assignment4,animateScanner-->Scanner.setScannedString
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,uncessaryMethodCall,Assignment4,animateScanner-->Scanner.setScannedString
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,magic.number,Assignment4,3000,EXPR 3000
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,magic.number,Assignment4,5,5
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,magic.number,Assignment4,75,75
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,magic.number,Assignment4,500,EXPR 500
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,magic.number,Assignment4,50,50
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Assignment4.java,missingMethodCall,Assignment4,ObjectEditor.initialize:->void
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Point.java,typeDefined,Point,No Expected Tag,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Approach.java,typeDefined,Approach,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Approach.java,classHasOneInterface,Approach,main.Approach
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Approach.java,functionAssignsGlobal,Approach,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/WordToken.java,typeDefined,WordToken,@Word,Interface
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Undo.java,typeDefined,Undo,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Undo.java,classHasOneInterface,Undo,main.Undo
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Undo.java,functionAssignsGlobal,Undo,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Minus.java,typeDefined,Minus,@Minus,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Redo.java,typeDefined,Redo,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Redo.java,classHasOneInterface,Redo,main.Redo
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Redo.java,functionAssignsGlobal,Redo,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/ProceedAll.java,typeDefined,ProceedAll,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/ProceedAll.java,classHasOneInterface,ProceedAll,main.ProceedAll
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/ProceedAll.java,functionAssignsGlobal,ProceedAll,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Sleep.java,typeDefined,Sleep,@Sleep,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Sleep.java,classHasOneInterface,Sleep,main.Sleep
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Sleep.java,functionAssignsGlobal,Sleep,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Fail.java,typeDefined,Fail,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Fail.java,classHasOneInterface,Fail,main.Fail
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Fail.java,functionAssignsGlobal,Fail,getValue
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Pass.java,typeDefined,Pass,No Expected Tag,Class
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Pass.java,classHasOneInterface,Pass,main.Pass
+1,Tue Sep 25 19:02:03 EDT 2018,true,main/Pass.java,functionAssignsGlobal,Pass,getValue
+2,Fri Oct 05 01:35:26 EDT 2018,true,mp/graphics/AngleShape.java,typeDefined,AngleShape,@Angle,Class
+2,Fri Oct 05 01:35:26 EDT 2018,true,mp/graphics/AngleShape.java,classHasAtLeastOneInterface,AngleShape,mp.graphics.AngleShape
+2,Fri Oct 05 01:35:26 EDT 2018,true,mp/graphics/AngleShape.java,expectedPattern,AngleShape,BEAN_PATTERN,AngleShape
+2,Fri Oct 05 01:35:26 EDT 2018,true,mp/graphics/AngleShape.java,expectedSignatures,AngleShape,@move:int;int->*,AngleShape
+2,Fri Oct 05 01:35:26 EDT 2018,true,mp/graphics/AngleShape.java,expectedSignatures,AngleShape,@scale:double->*,AngleShape
+3,Fri Oct 05 01:36:56 EDT 2018,false,APolarPoint,typeDefined,APolarPoint,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Repeat,typeDefined,Repeat,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Repeat,classHasOneInterface,Repeat,main.Repeat
+3,Fri Oct 05 01:36:56 EDT 2018,false,Repeat,functionAssignsGlobal,Repeat,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Pass,typeDefined,Pass,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Pass,functionAssignsGlobal,Pass,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Pass,classHasOneInterface,Pass,main.Pass
+3,Fri Oct 05 01:36:56 EDT 2018,false,Start,typeDefined,Start,@Start,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,End,typeDefined,End,@End,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Scanner,typeDefined,Scanner,@ScannerBean,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,variableHasClassType,RotatingLine,APolarPoint,endPoint
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,functionAssignsGlobal,RotatingLine,getWidth
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,expectedSuperTypes,RotatingLine,@BoundedShape,RotatingLine
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,magic.number,RotatingLine,16,16
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,typeDefined,RotatingLine,@RotatingLine,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotatingLine,functionAssignsGlobal,RotatingLine,getHeight
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,illegalMethodCall,Assignment4,animateScanner-->Scanner.setScannedString
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,missingMethodCall,Assignment4,ObjectEditor.initialize:->void
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,uncessaryMethodCall,Assignment4,animateScanner-->Scanner.setScannedString
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,magic.number,Assignment4,5,5
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,magic.number,Assignment4,3000,EXPR 3000
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,magic.number,Assignment4,50,50
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,magic.number,Assignment4,75,75
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,magic.number,Assignment4,500,EXPR 500
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment4,typeDefined,Assignment4,main.Assignment(.*),Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment2,typeDefined,Assignment2,main.Assignment(.*),Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment2,missingMethodCall,Assignment2,ObjectEditor.initialize:->void
+3,Fri Oct 05 01:36:56 EDT 2018,false,Assignment2,variableHasClassType,Assignment2,ScannerBean,bean
+3,Fri Oct 05 01:36:56 EDT 2018,false,Plus,typeDefined,Plus,@Plus,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Approach,classHasOneInterface,Approach,main.Approach
+3,Fri Oct 05 01:36:56 EDT 2018,false,Approach,functionAssignsGlobal,Approach,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Approach,typeDefined,Approach,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Point,typeDefined,Point,No Expected Tag,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateLeftArm,typeDefined,RotateLeftArm,@RotateLeftArm,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateLeftArm,functionAssignsGlobal,RotateLeftArm,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateLeftArm,classHasOneInterface,RotateLeftArm,main.RotateLeftArm
+3,Fri Oct 05 01:36:56 EDT 2018,false,ScannerBean,expectedGetters,ScannerBean,Tokens,.*\[\]
+3,Fri Oct 05 01:36:56 EDT 2018,false,ScannerBean,typeDefined,ScannerBean,@ScannerBean,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,ScannerBean,classHasAtLeastOneInterface,ScannerBean,main.ScannerBean
+3,Fri Oct 05 01:36:56 EDT 2018,false,ScannerBean,expectedGetters,ScannerBean,TokenList,@LIST_PATTERN
+3,Fri Oct 05 01:36:56 EDT 2018,false,ScannerBean,expectedGetters,ScannerBean,TokenList,@ClearableHistory
+3,Fri Oct 05 01:36:56 EDT 2018,false,Sleep,typeDefined,Sleep,@Sleep,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Sleep,classHasOneInterface,Sleep,main.Sleep
+3,Fri Oct 05 01:36:56 EDT 2018,false,Sleep,functionAssignsGlobal,Sleep,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,NumberToken,typeDefined,NumberToken,@Number,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Quote,typeDefined,Quote,@Quote,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Word,classHasOneInterface,Word,main.Word
+3,Fri Oct 05 01:36:56 EDT 2018,false,Word,typeDefined,Word,@Word,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Word,functionAssignsGlobal,Word,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,WordToken,typeDefined,WordToken,@Word,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Fail,classHasOneInterface,Fail,main.Fail
+3,Fri Oct 05 01:36:56 EDT 2018,false,Fail,functionAssignsGlobal,Fail,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Fail,typeDefined,Fail,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,[main.Assignment(.*),expectedTypes,[main.Assignment(.*), @ScannerBean, @Number, @Word, @Quote, @Start, @End, @Plus, @Minus, @move, @say, @rotateLeftArm, @rotateRightArm, @repeat, @define, @call, @thread, @wait, @proceedAll, @sleep, @undo, @redo, @approach, @pass, @fail, @RotatingLine, @Angle, @Avatar, @BridgeScene, @Locatable, @BoundedShape, @Table, @CommandInterpreter, @ConsoleSceneView, @InheritingBridgeScenePainter, @ObservableBridgeScenePainter, @PaintListener, @BridgeSceneController, @CommandInterpreterController, @ObservableCommandInterpreter, @SayCommand, @MoveCommand, @PassCommand, @Animator, @AnimatingCommand, @FailCommand, @ApproachCommand, @RepeatCommand, @CommandList, @RotateLeftArm, @RotateRightArm, @Sleep, @Define, @Call, @Thread, @DefineCommand, @CallCommand, @ThreadCommand, @Parser, @ScanningException, @ParsingException, @BroadcastingClearanceManager, @SingletonsCreator, @CustomSwingTextFieldFactory, @UndoCommand, @RedoCommand]
+3,Fri Oct 05 01:36:56 EDT 2018,false,Say,functionAssignsGlobal,Say,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Say,typeDefined,Say,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Say,classHasOneInterface,Say,main.Say
+3,Fri Oct 05 01:36:56 EDT 2018,false,Define,classHasOneInterface,Define,main.Define
+3,Fri Oct 05 01:36:56 EDT 2018,false,Define,functionAssignsGlobal,Define,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Define,typeDefined,Define,@Define,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Line,typeDefined,Line,@RotatingLine,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Minus,typeDefined,Minus,@Minus,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateRightArm,functionAssignsGlobal,RotateRightArm,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateRightArm,typeDefined,RotateRightArm,@RotateRightArm,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,RotateRightArm,classHasOneInterface,RotateRightArm,main.RotateRightArm
+3,Fri Oct 05 01:36:56 EDT 2018,false,Number,classHasOneInterface,Number,main.Number
+3,Fri Oct 05 01:36:56 EDT 2018,false,Number,typeDefined,Number,@Number,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Number,functionAssignsGlobal,Number,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@Call,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@Thread,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@Define,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@RotateLeftArm,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@RotateRightArm,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Command,typeDefined,Command,@Sleep,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Plus,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Minus,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@RotateRightArm,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@RotateLeftArm,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Quote,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@End,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Call,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Thread,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Word,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Define,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Number,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Start,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,Token,typeDefined,Token,@Sleep,Interface
+3,Fri Oct 05 01:36:56 EDT 2018,false,ProceedAll,classHasOneInterface,ProceedAll,main.ProceedAll
+3,Fri Oct 05 01:36:56 EDT 2018,false,ProceedAll,typeDefined,ProceedAll,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,ProceedAll,functionAssignsGlobal,ProceedAll,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Undo,typeDefined,Undo,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Undo,classHasOneInterface,Undo,main.Undo
+3,Fri Oct 05 01:36:56 EDT 2018,false,Undo,functionAssignsGlobal,Undo,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,RunTests,typeDefined,RunTests,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Wait,typeDefined,Wait,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Wait,functionAssignsGlobal,Wait,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Wait,classHasOneInterface,Wait,main.Wait
+3,Fri Oct 05 01:36:56 EDT 2018,false,Redo,classHasOneInterface,Redo,main.Redo
+3,Fri Oct 05 01:36:56 EDT 2018,false,Redo,typeDefined,Redo,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Redo,functionAssignsGlobal,Redo,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Call,typeDefined,Call,@Call,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Call,functionAssignsGlobal,Call,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Call,classHasOneInterface,Call,main.Call
+3,Fri Oct 05 01:36:56 EDT 2018,false,Thread,classHasOneInterface,Thread,main.Thread
+3,Fri Oct 05 01:36:56 EDT 2018,false,Thread,duplicateShortTypeName,Thread,[main.Thread, java.lang.Thread]
+3,Fri Oct 05 01:36:56 EDT 2018,false,Thread,typeDefined,Thread,@Thread,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Thread,functionAssignsGlobal,Thread,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Move,functionAssignsGlobal,Move,getValue
+3,Fri Oct 05 01:36:56 EDT 2018,false,Move,typeDefined,Move,No Expected Tag,Class
+3,Fri Oct 05 01:36:56 EDT 2018,false,Move,classHasOneInterface,Move,main.Move
